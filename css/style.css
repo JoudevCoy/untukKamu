@@ -131,3 +131,40 @@ body {
   height: 120px;
   object-fit: cover;
 }
+
+/* Halaman Loading */
+.loading-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  background: #444;
+  z-index: 10;
+  color: white;
+  opacity: 1;
+}
+.loading-wrap .loading {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border-top: 10px solid #e173ff65;
+  border-left: 10px solid #111;
+  border-right: 10px solid #111;
+  border-bottom: 10px solid #111;
+  transform: rotate(0deg);
+  animation: loading 1s infinite linear forwards;
+}
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loading-out {
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+}
