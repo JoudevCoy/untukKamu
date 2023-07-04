@@ -1,0 +1,133 @@
+html,
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Sans-Serif;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  background: linear-gradient(-50deg, #61506a, #704f81, #7d4e95, #9e64be);
+  background-size: 200%;
+  transition: background .5s ease;
+  animation: spinBg 10s infinite alternate ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spinBg {
+  from {
+    background-position-x: 0;
+    background-position-y: 0;
+  }
+  
+  to {
+    background-position-x: 100%;
+    background-position-y: 100%;
+  }
+}
+
+.decor-img {
+  position: absolute;
+  transform: translateY(-200%);
+  width: 100%;
+  height: 20vh;
+  z-index: 1;
+  object-fit: cover;
+}
+.bts-logo-img {
+  position: fixed;
+  width: 130px;
+  height: 148px;
+  object-fit: cover;
+  z-index: 1;
+  transform: scale(2) translate(-80px, 100px);
+  filter: drop-shadow(0 5px 15px #e173ff45);
+  animation: bts 4s ease forwards;
+}
+
+@keyframes bts {
+  0%{
+    transform: scale(0) translate(-80px, 100px);
+    filter: drop-shadow(0 5px 15px #e173ff45);
+  }
+  65% {
+    filter: drop-shadow(0 10px 15px #e173ff45);
+    transform: scale(2.4) translate(-30px, 100px) rotate(45deg);
+  }
+  100% {
+    filter: drop-shadow(0 15px 15px #e173ff65);
+    transform: scale(2.4) translate(-30px, 100px) rotate(45deg);
+  }
+}
+
+.container {
+  z-index: 3;
+  margin: 40px 15px;
+  width: 420px;
+  height: auto;
+  position: relative;
+  background: #ffffff30;
+  backdrop-filter: blur(7px);
+  padding: 15px 6px;
+  border-radius: 15px;
+}
+
+.container .title {
+  color: #fbfbfb;
+  text-align: center;
+  font-size: 29px;
+}
+
+.box-wrap {
+  margin-top: 60px;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 10px;
+  position: relative;
+}
+
+.box {
+  width: 300%;
+  display: flex;
+}
+.box .content {
+  width: 390px;
+  height: 370px;
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
+  text-align: center;
+  padding: 15px 20px;
+  border: 2px solid #fff;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+.box .title-box {
+  color: #fafafa;
+  font-size: 23px;
+}
+.box .content-box {
+  margin-top: 20px;
+  color: white;
+  font-size: 17px;
+}
+.box .img-box {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.box .beruangImut {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
